@@ -11,7 +11,12 @@ def open_random_images(path):
     # Get a list of all files in the folder
     all_files = os.listdir(path)
     random.shuffle(all_files)
-    return all_files[:4]
+    image_names = all_files[:4]
+    image_paths = []
+    for i in images:
+        image_path = os.path.join(path, image_names[i])
+        image_paths.append(image_path)
+    return image_paths
     
 
 def visualise_image():
@@ -21,7 +26,8 @@ def visualise_image():
         z.extractall('.')
     images = open_random_images(os.path.join(os.getcwd(),"Water_Bodies_Dataset_Split/train_images"))
     for i in range(4):
-        images[i].save('sample'+str(i)+'.jpg')
+        image = Image.open(images[i])
+        image.save('sample'+str(i)+'.jpg')
     #meningioma_tumor_image.save('meningioma_tumor.jpg')
     return url
 
