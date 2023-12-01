@@ -13,7 +13,7 @@ def open_random_images(path):
     random.shuffle(all_files)
     image_names = all_files[:4]
     image_paths = []
-    for i in image_names:
+    for i in range(4):
         image_path = os.path.join(path, image_names[i])
         image_paths.append(image_path)
     return image_paths
