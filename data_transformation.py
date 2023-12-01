@@ -130,7 +130,7 @@ def transform_data():
     
     with open('train_dataset.pkl', 'wb') as f:
         pickle.dump(train_dataset, f)
-    # with open('valid_dataset.pkl', 'wb') as f:
-    #     pickle.dump(valid_dataset, f)
+    with open('valid_dataset.pkl', 'wb') as f:
+        pickle.dump(valid_dataset, f)
     return train_dataset  #,valid_dataset
 transform_data()
