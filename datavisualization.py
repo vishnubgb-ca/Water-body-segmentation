@@ -11,7 +11,7 @@ def open_random_images(path):
     # Get a list of all files in the folder
     all_files = os.listdir(path)
     random.shuffle(all_files)
-    return all_images[:4]
+    return all_files[:4]
     
 
 def visualise_image():
