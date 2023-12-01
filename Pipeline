@@ -27,7 +27,7 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: ['train_dataset.pkl','valid_dataset.pkl'], onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'train_dataset.pkl', onlyIfSuccessful: true
         }
             }
         
