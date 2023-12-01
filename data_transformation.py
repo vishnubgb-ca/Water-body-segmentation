@@ -121,14 +121,15 @@ def transform_data():
         valid_dataset = SegmentationDataset(valid_image_paths, valid_mask_paths, valid_tfms, norm_tfms, label_colors_list, classes_to_train, all_classes)
         return train_dataset, valid_dataset
     
-    train_images, train_masks, valid_images, valid_masks = get_images('./Water_Bodies_Dataset_Split')    
+    train_images, train_masks, valid_images, valid_masks = get_images(os.path.join(os.getcwd(),"Water_Bodies_Dataset_Split"))    
 
     classes_to_train = ALL_CLASSES
     
     train_dataset, valid_dataset = get_dataset(train_images, train_masks, valid_images, valid_masks, ALL_CLASSES, classes_to_train, label_map, img_size=224)
     
-    model_dataset = datasets.ImageFolder(path, transform=data_transform)
-    with open('model_dataset.pkl', 'wb') as f:
-        pickle.dump(model_dataset, f)
-    return model_dataset
+    with open('train_dataset.pkl', 'wb') as f:
+        pickle.dump(train_dataset, f)
+    with open('valid_dataset.pkl', 'wb') as f:
+        pickle.dump(valid_dataset, f)
+    return train_dataset,valid_dataset
 transform_data()
