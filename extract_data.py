@@ -1,8 +1,7 @@
 import boto3
 import os
 
-os.environ["AWS_ACCESS_KEY_ID"]="AKIA3YG72WSKJ2FNO6US"
-os.environ["AWS_SECRET_ACCESS_KEY"]="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"
+
 
 import boto3
 
